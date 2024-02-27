@@ -1,0 +1,48 @@
+{% extends 'Navbar.html' %}
+<html>
+<head>
+    <style>
+        /* CSS for the button */
+        .custom-button {
+            background-color: #ffffff; /* Background color */
+            color: black; /* Text color */
+            border: 1px solid black; /* Border color */
+            padding: 8px 16px; /* Padding */
+            border-radius: 4px; /* Border radius */
+            cursor: pointer; /* Cursor style */
+        }
+        .custom-button:hover {
+            background-color: #f0f0f0; /* Hover background color */
+        }
+    </style>
+</head>
+{% block body %}
+<div>
+  <div class="container">
+    <div class="row">
+      <div align="center" class="col">
+        <br> <br>
+        <h2>Select Country to View Time Zone</h2>
+        <<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+        <br>
+        <button class="custom-button" onclick="showTimeZone()">Show Time Zone</button>
+      </div>
+      <div align="center" class="col">
+        <br><br>
+        <h1>Time Zone:</h1>
+        <p id="timeZoneDisplay">Select a country to view its time zone.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</html>

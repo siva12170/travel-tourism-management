@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        /* Set the color of the text inside the <a> tag */
+        a {
+            color: #F8BE5C !important;
+            transition: color 0.3s ease;
+        }
+
+        /* Set the background color of the navigation bar */
+        .navbar {
+            background-color: #2C3E50; /* Dark blue-gray background */
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav {
+            display: flex; /* Display items as a flex container */
+            align-items: center; /* Center items vertically */
+        }
+
+        /* Set the text color for the navbar links */
+        .navbar-nav .nav-link {
+            color: #ECF0F1 !important; /* Light gray text color */
+            transition: color 0.3s ease; /* Smooth text color transition */
+        }
+
+        /* Hover effect for links */
+        .navbar-nav .nav-link:hover {
+            color: #E74C3C !important; /* Change link color on hover */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'newhomepage'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'travelpackage'%}">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'destination1' %}">Fav Destions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'print1'%}">Print</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact'%}">FEEDBACK</a>
+        </li>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'url_shortener'%}">TINYURL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'send_emails'%}">Mail</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'rando1' %}">randomotp</a></li>
+            <li><a class="dropdown-item" href="{% url 'get_date' %}">Get Date</a></li>
+            <li><a class="dropdown-item" href="{% url 'pytzexample' %}">Time zone</a></li>
+            <li><a class="dropdown-item" href="{% url 'dbase' %}">register form</a></li>
+            <li><a class="dropdown-item" href="{% url 'chart_form' %}">graph generator</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            PFSD THINGS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'threadapp' %}">Empdetails</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span class="nav-link">Welcome, {{ user.username }}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup2' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup2' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login1' %}">Login</a>
+          </li>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block body %}
+
+{% endblock %}
+</body>
+</html>
